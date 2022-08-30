@@ -31,7 +31,7 @@ on Employee
 after update
 as
 begin
-if (select Age from inserted) < 22
+if (select Birthday from inserted) < 22
 begin
   print 'Tuoi khong du 22';
   rollback transaction;
