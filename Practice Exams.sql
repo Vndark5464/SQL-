@@ -40,5 +40,14 @@ end
  end
 
 
+ create index IX_DepartmentName on Department(DepartName);
+
+ create unique index IX_DeparmentName
+on Department(DepartName);
+
+create procedure sp_getAllEmp @departmentId int as
+select * from Employee where DepartId = @departmentId;
+
+exec sp_getAllEmp  @departmentId = 1;
 
 
